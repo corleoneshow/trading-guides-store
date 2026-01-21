@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Options Trading Basics</title>
+  <style>
+    @page {
+      margin: 1in;
+      size: letter;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      line-height: 1.7;
+      color: #1a1a1a;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      font-size: 11pt;
+    }
+
+    h1 {
+      font-size: 28pt;
+      text-align: center;
+      margin-bottom: 5px;
+      color: #0d4f3c;
+    }
+
+    h1 + h3 {
+      text-align: center;
+      font-weight: normal;
+      color: #666;
+      margin-top: 0;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 18pt;
+      color: #0d4f3c;
+      border-bottom: 2px solid #0d4f3c;
+      padding-bottom: 8px;
+      margin-top: 50px;
+      page-break-after: avoid;
+    }
+
+    h3 {
+      font-size: 14pt;
+      color: #1a1a1a;
+      margin-top: 30px;
+      page-break-after: avoid;
+    }
+
+    h4 {
+      font-size: 12pt;
+      color: #333;
+      margin-top: 25px;
+    }
+
+    p {
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    strong {
+      color: #0d4f3c;
+    }
+
+    em {
+      color: #555;
+    }
+
+    ul, ol {
+      margin-bottom: 20px;
+      padding-left: 25px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .highlight-box {
+      background: #f0f7f4;
+      border-left: 4px solid #0d4f3c;
+      padding: 15px 20px;
+      margin: 25px 0;
+    }
+
+    .warning-box {
+      background: #fff8e6;
+      border-left: 4px solid #f5a623;
+      padding: 15px 20px;
+      margin: 25px 0;
+    }
+
+    code, pre {
+      font-family: 'Courier New', monospace;
+      background: #f5f5f5;
+      font-size: 9pt;
+    }
+
+    pre {
+      padding: 15px;
+      overflow-x: auto;
+      border-radius: 5px;
+      line-height: 1.4;
+    }
+
+    code {
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 40px 0;
+    }
+
+    .cover-page {
+      text-align: center;
+      padding: 100px 0;
+      page-break-after: always;
+    }
+
+    .cover-page h1 {
+      font-size: 36pt;
+      margin-bottom: 20px;
+    }
+
+    .cover-page .subtitle {
+      font-size: 16pt;
+      color: #666;
+      margin-bottom: 60px;
+    }
+
+    .cover-page .author {
+      font-size: 12pt;
+      color: #888;
+    }
+
+    .toc {
+      page-break-after: always;
+    }
+
+    .toc h2 {
+      border: none;
+      text-align: center;
+    }
+
+    .toc ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .toc li {
+      padding: 10px 0;
+      border-bottom: 1px dotted #ccc;
+    }
+
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .checklist li {
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .checklist li:before {
+      content: "☐";
+      position: absolute;
+      left: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 10pt;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background: #0d4f3c;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+      color: #888;
+      font-size: 9pt;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cover-page">
+    <h1>Options Trading Basics</h1>
+    <p class="subtitle">Your Complete Beginner's Guide to Trading Options</p>
+    <p class="author">TradingGuides</p>
+  </div>
+
+  <div class="toc">
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><strong>Chapter 1:</strong> What Are Options?</li>
+      <li><strong>Chapter 2:</strong> Key Terms You Must Know</li>
+      <li><strong>Chapter 3:</strong> How to Read an Options Chain</li>
+      <li><strong>Chapter 4:</strong> Your First Strategies</li>
+      <li><strong>Chapter 5:</strong> Risk Management</li>
+      <li><strong>Chapter 6:</strong> Getting Started</li>
+    </ul>
+  </div>
+
+  <h2>Introduction</h2>
+
+  <p>Welcome! If you've ever felt intimidated by options trading, you're not alone. Options seem complicated at first, but once you understand the basics, they become a powerful tool in your investing toolkit.</p>
+
+  <p>This guide will take you from zero to confidently understanding what options are, how they work, and how to make your first trade. No finance degree required—just a willingness to learn.</p>
+
+  <p>Let's get started.</p>
+
+  <h2 class="page-break">Chapter 1: What Are Options?</h2>
+
+  <h3>The Simple Explanation</h3>
+
+  <p>An option is a contract that gives you the <strong>right</strong> (but not the obligation) to buy or sell a stock at a specific price before a certain date.</p>
+
+  <p>Think of it like a reservation. Imagine you want to buy a house that's currently worth $300,000. You pay the owner $5,000 for the right to purchase that house for $300,000 anytime in the next 6 months—no matter what happens to the price.</p>
+
+  <ul>
+    <li>If the house goes up to $350,000, you exercise your option and buy it for $300,000. You just made $45,000 ($50,000 gain minus your $5,000 reservation fee).</li>
+    <li>If the house drops to $250,000, you walk away and only lose your $5,000 reservation fee.</li>
+  </ul>
+
+  <p>That's essentially how options work with stocks.</p>
+
+  <h3>Calls vs Puts</h3>
+
+  <p>There are two types of options:</p>
+
+  <div class="highlight-box">
+    <h4>CALL OPTIONS</h4>
+    <ul>
+      <li>Give you the right to <strong>BUY</strong> a stock at a set price</li>
+      <li>You buy calls when you think the stock will go <strong>UP</strong></li>
+      <li>Memory trick: "I'm <em>calling</em> the stock to me"</li>
+    </ul>
+  </div>
+
+  <div class="highlight-box">
+    <h4>PUT OPTIONS</h4>
+    <ul>
+      <li>Give you the right to <strong>SELL</strong> a stock at a set price</li>
+      <li>You buy puts when you think the stock will go <strong>DOWN</strong></li>
+      <li>Memory trick: "I'm <em>putting</em> the stock away from me"</li>
+    </ul>
+  </div>
+
+  <h3>Why Trade Options?</h3>
+
+  <p><strong>1. Leverage</strong><br>
+  Control 100 shares of stock for a fraction of the cost. A $500 option contract might control $15,000 worth of stock.</p>
+
+  <p><strong>2. Limited Risk</strong><br>
+  When you buy options, your maximum loss is what you paid. Unlike shorting stocks, you can't lose more than your investment.</p>
+
+  <p><strong>3. Income Generation</strong><br>
+  Sell options to collect premium and generate consistent income from stocks you own.</p>
+
+  <p><strong>4. Hedging</strong><br>
+  Protect your portfolio from downturns, like buying insurance for your stocks.</p>
+
+  <h2 class="page-break">Chapter 2: Key Terms You Must Know</h2>
+
+  <p>Before placing your first trade, you need to understand these essential terms:</p>
+
+  <h3>Strike Price</h3>
+  <p>The price at which you can buy (call) or sell (put) the underlying stock.</p>
+  <p><em>Example: A $150 strike call on Apple gives you the right to buy Apple at $150, regardless of where the stock is trading.</em></p>
+
+  <h3>Premium</h3>
+  <p>The price you pay to buy an option (or receive when you sell one). This is quoted per share, but remember—each contract controls 100 shares.</p>
+  <p><em>Example: A premium of $3.50 means you pay $350 per contract ($3.50 × 100 shares).</em></p>
+
+  <h3>Expiration Date</h3>
+  <p>The date when the option contract expires. After this date, the option is worthless if not exercised.</p>
+  <p>Options can expire:</p>
+  <ul>
+    <li>Weekly (every Friday)</li>
+    <li>Monthly (third Friday of each month)</li>
+    <li>Longer-term (LEAPS - up to 2+ years)</li>
+  </ul>
+
+  <h3>In The Money (ITM) / Out of The Money (OTM) / At The Money (ATM)</h3>
+
+  <table>
+    <tr>
+      <th>Term</th>
+      <th>Call Option</th>
+      <th>Put Option</th>
+    </tr>
+    <tr>
+      <td><strong>In The Money (ITM)</strong></td>
+      <td>Stock price &gt; Strike price</td>
+      <td>Stock price &lt; Strike price</td>
+    </tr>
+    <tr>
+      <td><strong>Out of The Money (OTM)</strong></td>
+      <td>Stock price &lt; Strike price</td>
+      <td>Stock price &gt; Strike price</td>
+    </tr>
+    <tr>
+      <td><strong>At The Money (ATM)</strong></td>
+      <td colspan="2">Stock price ≈ Strike price</td>
+    </tr>
+  </table>
+
+  <h3>The Greeks (Simplified)</h3>
+
+  <p><strong>Delta</strong> - How much the option price moves when the stock moves $1</p>
+  <ul>
+    <li>Call deltas range from 0 to 1</li>
+    <li>Put deltas range from -1 to 0</li>
+    <li>Higher delta = option moves more with the stock</li>
+  </ul>
+
+  <p><strong>Theta</strong> - Time decay. How much value the option loses each day.</p>
+  <ul>
+    <li>Options lose value as expiration approaches</li>
+    <li>This hurts option buyers, helps option sellers</li>
+  </ul>
+
+  <p><strong>Implied Volatility (IV)</strong> - How much movement the market expects</p>
+  <ul>
+    <li>High IV = expensive options (expecting big moves)</li>
+    <li>Low IV = cheap options (expecting small moves)</li>
+  </ul>
+
+  <h2 class="page-break">Chapter 3: How to Read an Options Chain</h2>
+
+  <p>An options chain shows all available options for a stock. Here's how to read one:</p>
+
+  <h3>Sample Options Chain for XYZ Stock (Trading at $100)</h3>
+
+  <table>
+    <tr>
+      <th colspan="5" style="text-align: center;">CALLS</th>
+      <th colspan="5" style="text-align: center;">PUTS</th>
+    </tr>
+    <tr>
+      <th>Strike</th>
+      <th>Bid</th>
+      <th>Ask</th>
+      <th>Delta</th>
+      <th>Volume</th>
+      <th>Strike</th>
+      <th>Bid</th>
+      <th>Ask</th>
+      <th>Delta</th>
+      <th>Volume</th>
+    </tr>
+    <tr>
+      <td>$95</td>
+      <td>$6.20</td>
+      <td>$6.40</td>
+      <td>0.75</td>
+      <td>1,200</td>
+      <td>$95</td>
+      <td>$0.80</td>
+      <td>$0.95</td>
+      <td>-0.20</td>
+      <td>800</td>
+    </tr>
+    <tr>
+      <td>$100</td>
+      <td>$3.00</td>
+      <td>$3.20</td>
+      <td>0.50</td>
+      <td>3,500</td>
+      <td>$100</td>
+      <td>$2.90</td>
+      <td>$3.10</td>
+      <td>-0.50</td>
+      <td>3,200</td>
+    </tr>
+    <tr>
+      <td>$105</td>
+      <td>$1.20</td>
+      <td>$1.35</td>
+      <td>0.30</td>
+      <td>2,100</td>
+      <td>$105</td>
+      <td>$5.80</td>
+      <td>$6.00</td>
+      <td>-0.72</td>
+      <td>950</td>
+    </tr>
+  </table>
+
+  <h3>Understanding the Numbers</h3>
+
+  <p><strong>Bid:</strong> What buyers will pay (you get this when selling)<br>
+  <strong>Ask:</strong> What sellers want (you pay this when buying)<br>
+  <strong>Spread:</strong> The difference between bid and ask (tighter is better)</p>
+
+  <h3>Picking the Right Strike</h3>
+
+  <ul>
+    <li><strong>ITM options:</strong> More expensive, higher probability of profit, less leverage</li>
+    <li><strong>ATM options:</strong> Moderate price, ~50% chance of expiring ITM</li>
+    <li><strong>OTM options:</strong> Cheaper, lower probability, higher potential % return</li>
+  </ul>
+
+  <div class="warning-box">
+    <strong>Beginner tip:</strong> Start with ATM or slightly ITM options. OTM options are tempting because they're cheap, but they expire worthless more often.
+  </div>
+
+  <h2 class="page-break">Chapter 4: Your First Strategies</h2>
+
+  <h3>Strategy 1: Buying Calls (Bullish)</h3>
+
+  <p><strong>When to use:</strong> You think a stock will go UP.</p>
+
+  <p><strong>How it works:</strong></p>
+  <ol>
+    <li>Buy a call option</li>
+    <li>If the stock rises above your strike price + premium paid, you profit</li>
+    <li>Maximum loss = premium paid</li>
+  </ol>
+
+  <div class="highlight-box">
+    <strong>Example:</strong>
+    <ul>
+      <li>Stock XYZ is at $100</li>
+      <li>You buy the $105 call for $2.00 ($200 total)</li>
+      <li>Breakeven: $107 ($105 strike + $2 premium)</li>
+      <li>If stock goes to $115: Your call is worth ~$10, profit of $800</li>
+      <li>If stock stays at $100: You lose your $200 premium</li>
+    </ul>
+  </div>
+
+  <h3>Strategy 2: Buying Puts (Bearish/Protection)</h3>
+
+  <p><strong>When to use:</strong> You think a stock will go DOWN, or you want to protect shares you own.</p>
+
+  <p><strong>How it works:</strong></p>
+  <ol>
+    <li>Buy a put option</li>
+    <li>If the stock falls below your strike price - premium paid, you profit</li>
+    <li>Maximum loss = premium paid</li>
+  </ol>
+
+  <div class="highlight-box">
+    <strong>Example:</strong>
+    <ul>
+      <li>Stock XYZ is at $100</li>
+      <li>You buy the $95 put for $1.50 ($150 total)</li>
+      <li>Breakeven: $93.50 ($95 strike - $1.50 premium)</li>
+      <li>If stock drops to $85: Your put is worth ~$10, profit of $850</li>
+      <li>If stock rises: You lose your $150 premium</li>
+    </ul>
+  </div>
+
+  <h3>Strategy 3: Selling Covered Calls (Income)</h3>
+
+  <p><strong>When to use:</strong> You own 100+ shares and want to generate income.</p>
+
+  <p><strong>How it works:</strong></p>
+  <ol>
+    <li>Own at least 100 shares of stock</li>
+    <li>Sell a call option against your shares</li>
+    <li>Collect the premium immediately</li>
+    <li>If stock stays below strike: Keep premium + shares</li>
+    <li>If stock goes above strike: Shares get sold at strike price (still keep premium)</li>
+  </ol>
+
+  <div class="highlight-box">
+    <strong>Example:</strong>
+    <ul>
+      <li>You own 100 shares of XYZ at $100</li>
+      <li>You sell the $110 call for $1.50 ($150 collected)</li>
+      <li>If stock stays under $110: Keep $150, keep shares</li>
+      <li>If stock goes to $115: Shares sold at $110, you keep $150 premium</li>
+      <li>Total return: $10 capital gain + $1.50 premium = $11.50/share</li>
+    </ul>
+  </div>
+
+  <p><strong>This is one of the safest ways to start with options.</strong></p>
+
+  <h2 class="page-break">Chapter 5: Risk Management</h2>
+
+  <h3>Rule 1: Never Risk More Than You Can Afford to Lose</h3>
+
+  <p>With options, assume every trade could go to zero. Only trade with money you can lose completely.</p>
+
+  <div class="warning-box">
+    <strong>Position sizing guideline:</strong> Risk no more than 1-5% of your trading account on a single options trade.
+  </div>
+
+  <h3>Rule 2: Understand Your Maximum Loss BEFORE Entering</h3>
+
+  <p><strong>When buying options:</strong><br>
+  Max loss = Premium paid</p>
+
+  <p><strong>When selling naked options:</strong><br>
+  Max loss = Potentially unlimited (DON'T do this as a beginner)</p>
+
+  <h3>Rule 3: Have an Exit Plan</h3>
+
+  <p>Before entering any trade, know:</p>
+  <ul>
+    <li>Your profit target (when will you sell?)</li>
+    <li>Your stop loss (when will you cut losses?)</li>
+  </ul>
+
+  <p><strong>Example exit rules:</strong></p>
+  <ul>
+    <li>Take profits at 50-100% gain</li>
+    <li>Cut losses at 50% loss</li>
+    <li>Exit if your thesis changes</li>
+  </ul>
+
+  <h3>Rule 4: Watch Your Expiration</h3>
+
+  <p>Time decay accelerates in the final 30 days. Don't hold options too close to expiration unless you have a specific reason.</p>
+
+  <div class="warning-box">
+    <strong>Beginner tip:</strong> Buy options with at least 30-45 days until expiration.
+  </div>
+
+  <h3>Common Beginner Mistakes to Avoid</h3>
+
+  <ol>
+    <li><strong>Buying far OTM options</strong> - They're cheap for a reason (low probability)</li>
+    <li><strong>Ignoring time decay</strong> - Your option loses value every day</li>
+    <li><strong>Trading too big</strong> - One bad trade shouldn't blow up your account</li>
+    <li><strong>No exit plan</strong> - Winners turn into losers without a plan</li>
+    <li><strong>Chasing earnings</strong> - Volatility crush after earnings destroys option value</li>
+    <li><strong>Overtrading</strong> - Quality over quantity</li>
+  </ol>
+
+  <h2 class="page-break">Chapter 6: Getting Started</h2>
+
+  <h3>Step 1: Choose a Broker</h3>
+
+  <p>Look for:</p>
+  <ul>
+    <li>Low or no commissions on options</li>
+    <li>Good mobile app and platform</li>
+    <li>Educational resources</li>
+    <li>Paper trading feature</li>
+  </ul>
+
+  <p><strong>Popular options-friendly brokers:</strong></p>
+  <ul>
+    <li>TD Ameritrade (thinkorswim platform)</li>
+    <li>Tastytrade</li>
+    <li>Robinhood (simple but limited features)</li>
+    <li>Interactive Brokers (advanced)</li>
+    <li>Webull</li>
+  </ul>
+
+  <h3>Step 2: Get Approved for Options Trading</h3>
+
+  <p>Brokers require approval before you can trade options. You'll answer questions about:</p>
+  <ul>
+    <li>Your income and net worth</li>
+    <li>Trading experience</li>
+    <li>Investment objectives</li>
+  </ul>
+
+  <p><strong>Be honest.</strong> Start with Level 1 or 2 approval:</p>
+  <ul>
+    <li>Level 1: Covered calls, cash-secured puts</li>
+    <li>Level 2: Buying calls and puts</li>
+  </ul>
+
+  <h3>Step 3: Paper Trade First</h3>
+
+  <p>Practice with fake money before risking real capital. Most brokers offer paper trading.</p>
+
+  <div class="warning-box">
+    <strong>Paper trade for at least 1-2 months</strong> until you're consistently profitable.
+  </div>
+
+  <h3>Step 4: Start Small</h3>
+
+  <p>Your first real trade:</p>
+  <ul>
+    <li>Trade just 1 contract</li>
+    <li>Use money you can afford to lose</li>
+    <li>Pick a stock you know well</li>
+    <li>Start with covered calls or buying calls/puts</li>
+  </ul>
+
+  <h3>Pre-Trade Checklist</h3>
+
+  <p>Before every trade, ask yourself:</p>
+
+  <ul class="checklist">
+    <li>What's my thesis? (Why am I making this trade?)</li>
+    <li>What's my profit target?</li>
+    <li>What's my maximum loss?</li>
+    <li>How much time until expiration?</li>
+    <li>What's the implied volatility? (Is it high or low?)</li>
+    <li>What's my exit plan if I'm wrong?</li>
+  </ul>
+
+  <h2 class="page-break">Final Thoughts</h2>
+
+  <p>Options trading is a skill that takes time to develop. You will make mistakes—everyone does. The key is to:</p>
+
+  <ol>
+    <li>Start small</li>
+    <li>Learn from every trade</li>
+    <li>Never risk more than you can afford to lose</li>
+    <li>Keep educating yourself</li>
+  </ol>
+
+  <p>The fact that you're reading this guide means you're already ahead of most traders who jump in without learning the basics first.</p>
+
+  <p>Now go paper trade, practice these strategies, and when you're ready—make your first trade.</p>
+
+  <p><strong>Good luck!</strong></p>
+
+  <hr>
+
+  <p><em>Disclaimer: This guide is for educational purposes only. Options trading involves significant risk and is not suitable for all investors. Past performance does not guarantee future results. Always do your own research and consider consulting a financial advisor before trading.</em></p>
+
+  <div class="footer">
+    <p>© 2025 TradingGuides. All rights reserved.</p>
+  </div>
+
+</body>
+</html>
