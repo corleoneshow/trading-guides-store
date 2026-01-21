@@ -33,8 +33,8 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "Product not found" }, { status: 404 });
     }
 
-    // Read the file from the downloads directory
-    const filePath = path.join(process.cwd(), "downloads", product.downloadFile);
+    // Read the file from the public/downloads directory
+    const filePath = path.join(process.cwd(), "public", "downloads", product.downloadFile);
 
     try {
       const fileBuffer = await readFile(filePath);
