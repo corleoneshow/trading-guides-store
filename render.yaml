@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: trading-guides-store
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_PUBLISHABLE_KEY
+        sync: false
+      - key: NEXT_PUBLIC_URL
+        sync: false
